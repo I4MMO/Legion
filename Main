@@ -1523,7 +1523,7 @@ MainBuffer:write(function()
 
 	--> local Bolt = loadstring(game:HttpGet("https://femboys-for.rent/p/raw/tlzqiyz8wh"))()
 
-	local legion = Legion.new({Title="Legion ",Credits = "Solo,Percent,Iux"})
+	local legion = Legion.new({Title="Legion ",Credits = "Solo,Percent,MO"})
 	local Holder = Instance.new("Model",workspace)
 
 	for index,name in pairs({"Settings","Document","Folder","Code","User","Custom","Wallet","Player","Target","File","Globe","Bank","Settings_2","Eye","volume","at"}) do 
@@ -3841,17 +3841,17 @@ MainBuffer:write(function()
 					Settings["Grab"]["Grab"] = false 
 					Modules["Play"]("8063279487")
 					if Settings["Grab"]["Effects"] then 
-						Services.TweenService:Create(game.Lighting, TweenInfo.new(.7), {ColorShift_Bottom = Color3.fromRGB(0,255,0)}):Play()
-						Services.TweenService:Create(game.Lighting, TweenInfo.new(.7), {ColorShift_Top = Color3.fromRGB(0,255,0)}):Play()
-						Services.TweenService:Create(game.Lighting, TweenInfo.new(.7), {Brightness = 100}):Play()
-						Services.TweenService:Create(game.Lighting, TweenInfo.new(.7), {Ambient = Color3.fromRGB(0,255,0)}):Play()
+						Services.TweenService:Create(game., TweenInfo.new(.7), {ColorShift_Bottom = Color3.fromRGB(0,255,0)}):Play()
+						Services.TweenService:Create(game., TweenInfo.new(.7), {ColorShift_Top = Color3.fromRGB(0,255,0)}):Play()
+						Services.TweenService:Create(game., TweenInfo.new(.7), {Brightness = 100}):Play()
+						Services.TweenService:Create(game., TweenInfo.new(.7), {Ambient = Color3.fromRGB(0,255,0)}):Play()
 					end 
 					Modules["Chat"]("C MOON: GRAVITY MOON")
 					Modules["AnimPlay"](Services.LocalPlayer.Character,8254789608)
 					Settings["Grab"]["GrabbedCharacter"].UpperTorso.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(0,2000,0)
 					task.wait(3.5)
 
-					Services.TweenService:Create(game.Lighting, TweenInfo.new(.7), {ColorShift_Bottom = Color3.fromRGB(0,0,0)}):Play()
+					Services.TweenService:Create(game., TweenInfo.new(.7), {ColorShift_Bottom = Color3.fromRGB(0,0,0)}):Play()
 					Services.TweenService:Create(game.Lighting, TweenInfo.new(.7), {ColorShift_Top = Color3.fromRGB(0,0,0)}):Play()
 					Services.TweenService:Create(game.Lighting, TweenInfo.new(.7), {Brightness = 1}):Play()
 					Services.TweenService:Create(game.Lighting, TweenInfo.new(.7), {Ambient = Color3.fromRGB(0,0,0)}):Play()
@@ -5321,7 +5321,7 @@ MainBuffer:write(function()
 	local CreditsSection = Tabs.Credits:Section({Side = "Left"})
 	-- Credits 
 	CreditsSection:Button({Text="Percent [6prozent on dc]",Callback = function() print("hi") end })
-	CreditsSection:Button({Text="Iux [youtube.com on dc]",Callback = function() print("hi") end })
+	CreditsSection:Button({Text="MO [i4mmo on dc]",Callback = function() print("hi") end })
 	CreditsSection:Button({Text="Solo [literallysolodev on dc]",Callback = function() print("hi") end })
 	CreditsSection:KeyBind({Text = "UI Toggle", Default = Enum.KeyCode.Insert, Callback = function(key)
 		if Main then
