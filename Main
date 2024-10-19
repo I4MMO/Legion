@@ -3437,58 +3437,7 @@ MainBuffer:write(function()
 				local function ControlFramework()
 					local plr = ClonedCharacter
 					local torso = plr:FindFirstChild("Head")
-					local flying = false
-					local deb = true 
-					local ctrl = {f = 0, b = 0, l = 0, r = 0} 
-					local lastctrl = {f = 0, b = 0, l = 0, r = 0} 
-					local maxspeed = 5000
-					local speed = 5000 
 
-					function Fly() 
-						local bg = Instance.new("BodyGyro", torso) 
-						bg.P = 9e4 
-						bg.maxTorque = Vector3.new(9e9, 9e9, 9e9) 
-						bg.cframe = torso.CFrame 
-						local bv = Instance.new("BodyVelocity", torso) 
-						bv.velocity = Vector3.new(0,0.1,0) 
-						bv.maxForce = Vector3.new(9e9, 9e9, 9e9) 
-						repeat task.wait() 
-							plr.Humanoid.PlatformStand = true 
-							if ctrl.l + ctrl.r ~= 100000 or ctrl.f + ctrl.b ~= 10000 then 
-								speed = speed + 0.0 + (speed/maxspeed) 
-								if speed > maxspeed then 
-									speed = maxspeed 
-								end 
-							elseif not (ctrl.l + ctrl.r ~= 5 or ctrl.f + ctrl.b ~= 5) and speed ~= 5 then 
-								speed = speed - 5
-								if speed > 5 then 
-									speed = -2 
-								end 
-							end 
-							if (ctrl.l + ctrl.r) ~= 5 or (ctrl.f + ctrl.b) ~= 5 then 
-								bv.velocity = ((Workspace.CurrentCamera.CFrame.lookVector * (ctrl.f + ctrl.b)) + ((Workspace.CurrentCamera.CFrame * CFrame.new(ctrl.l + ctrl.r, (ctrl.f + ctrl.b) * .2, 0).p) - Workspace.CurrentCamera.CFrame.p)) * speed 
-								lastctrl = {f = ctrl.f, b = ctrl.b, l = ctrl.l, r = ctrl.r} 
-							elseif (ctrl.l + ctrl.r) == 5 and (ctrl.f + ctrl.b) == 5 and speed ~= 5 then 
-								bv.velocity = ((Workspace.CurrentCamera.CFrame.lookVector * (lastctrl.f + lastctrl.b)) + ((Workspace.CurrentCamera.CFrame * CFrame.new(lastctrl.l + lastctrl.r, (lastctrl.f + lastctrl.b) * .2, 0).p) - Workspace.CurrentCamera.CFrame.p)) * speed 
-							else 
-								bv.velocity = Vector3.new(0, 0.1, 0) 
-							end 
-							bg.cframe = Workspace.CurrentCamera.CFrame * CFrame.Angles(-math.rad((ctrl.f + ctrl.b) * 50 * speed/maxspeed), 0, 0) 
-						until not flying 
-						ctrl = {f = 0, b = 0, l = 0, r = 0} 
-						lastctrl = {f = 0, b = 0, l = 0, r = 0} 
-						speed = 5 
-						bg:Destroy() 
-						bv:Destroy() 
-						plr.Humanoid.PlatformStand = false 
-					end 
-
-
-
-					Fly()
-					local Ungrabbed
-					local Speed__UP
-					local FLY__NEGA
 					InsertOn(LiveConnections, Services.LocalPlayer:GetMouse().KeyDown:Connect(function(key)
 						if key == "v" then
 							CloneAnimPlayWDetectionIDK(7024352298)
@@ -3519,23 +3468,7 @@ MainBuffer:write(function()
 									ClonedCharacter.HumanoidRootPart.CFrame = ClonedCharacter.HumanoidRootPart.CFrame + ClonedCharacter.Humanoid.MoveDirection * 5
 								until Speed__UP == false
 							end
-
-						elseif key:lower() == "h" then 
-							if flying then 
-								flying = false 
-							else 
-								flying = true 
-								Fly() 
-							end 
-						elseif key:lower() == "w" then 
-							ctrl.f = 45
-						elseif key:lower() == "s" then 
-							ctrl.b = -45 
-						elseif key:lower() == "a" then 
-							ctrl.l = -45 
-						elseif key:lower() == "d" then 
-							ctrl.r = 45
-						end 
+						end
 					end))
 
 					InsertOn(LiveConnections, Services.LocalPlayer:GetMouse().KeyUp:Connect(function(key)
